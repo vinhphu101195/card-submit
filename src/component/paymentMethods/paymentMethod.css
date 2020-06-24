@@ -1,0 +1,69 @@
+.payment-methods {
+    background: #fff;
+    margin: 20px 0 0;
+    padding: 10px 0;
+    border-radius: 4px;
+  }
+  
+  .payment-methods h6 {
+    font-weight: 600;
+    font-size: 16px;
+    color: #1a1a1a;
+    margin: 0 10px 10px;
+  }
+  
+  .payment-methods ul {
+    display: flex;
+    align-items: center;
+  }
+  
+  .payment-methods .method {
+    text-align: center;
+    cursor: pointer;
+    background: #fff;
+    width: 150px;
+    padding: 0 5px;
+    position: relative;
+  }
+  /* active  */
+  .payment-methods .method.active div {
+      background: #fff;
+      border: 1px solid #f16d25;
+  }
+  /* active  */
+  .payment-methods .method div {
+      border-radius: 4px;
+      border: 1px solid #f6f7f8;
+  }
+  
+  .payment-methods .method img {
+    /* width: 40px;
+    height: 40px; */
+    width: 50%;
+    height: 30%;
+    margin: 8px 0;
+  }
+  
+  .payment-methods .method span {
+    font-family: ArialMT;
+    font-size: 15px;
+    color: #1a1a1a;
+    display: block;
+    padding: 5px 0;
+    letter-spacing: -0.27px;
+    background: #f2f3f5
+  }
+  .payment-methods .method label {
+    position: absolute;
+    top: -5px;
+    right: 0;
+    padding: 3px 10px;
+    border-radius: 4px;
+  }
+  .payment-methods .method.active span,
+  .payment-methods .method label {
+    background: #f16d25;
+    color: #fff;
+    text-align: center;
+  }
+  
