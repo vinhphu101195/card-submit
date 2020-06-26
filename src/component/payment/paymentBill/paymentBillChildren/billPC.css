@@ -1,6 +1,11 @@
 .payment-bill .bill-pc {
   width: 40%;
 }
+@media only screen and (max-width: 800px) {
+  .payment-bill .bill-pc {
+    width: 100%;
+  }
+}
 .payment-bill .bill-wrapper {
   background: #fff;
   margin-top: 20px;
@@ -60,7 +65,7 @@
   opacity: 0.5;
   pointer-events: none;
 }
-.payform .payform-form .btn-row a {
+.payform .payform-form .btn-row button {
   background-image: -webkit-gradient(
     linear,
     left bottom,
@@ -79,4 +84,11 @@
   width: 50%;
   margin: 0 auto;
   border-radius: 4px;
+  border: 0;
+}
+
+.show-error {
+  margin-top: 10px;
+  color: red;
+  font-size: 15px;
 }

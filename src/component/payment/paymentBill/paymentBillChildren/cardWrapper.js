@@ -2,37 +2,6 @@ import React, { useState, useContext } from "react";
 import "./cardWrapper.css";
 
 const CardWrapper = (props) => {
-  const paymentCards = [
-    {
-      amount: "10.000",
-      diamon: "190",
-    },
-    {
-      amount: "20.000",
-      diamon: "490",
-    },
-    {
-      amount: "50.000",
-      diamon: "1.390",
-    },
-    {
-      amount: "100.000",
-      diamon: "2.790",
-    },
-    {
-      amount: "200.000",
-      diamon: "5.790",
-    },
-    {
-      amount: "300.000",
-      diamon: "8.790",
-    },
-    {
-      amount: "500.000",
-      diamon: "14.790",
-    },
-  ];
-  // const [selectActive, setSelectActive] = useState("");
   const {
     selectActive: [selectActive, setSelectActive],
   } = {
@@ -50,6 +19,7 @@ const CardWrapper = (props) => {
             onClick={() => {
               setSelectActive(card);
             }}
+            value="item_id"
           >
             <div className="box">
               <div className="num1">{card.amount} đ</div>
@@ -68,7 +38,7 @@ const CardWrapper = (props) => {
         );
       });
     } else {
-      return "";
+      return null;
     }
   };
 
@@ -79,7 +49,7 @@ const CardWrapper = (props) => {
           <h2>Chọn mệnh giá</h2>
         </div>
         <div className="card-list">
-          <ul>{showCards(paymentCards)}</ul>
+          <ul>{showCards(props.paymentCards)}</ul>
         </div>
       </div>
       <div className="wallet-info">

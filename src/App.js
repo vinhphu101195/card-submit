@@ -2,8 +2,8 @@ import React from "react";
 import "./App.css";
 import Header from "./component/navbar/navbar";
 import Banner from "./component/banner/banner";
-import PaymentMethod from "./component/paymentMethods/paymentMethod";
-import PaymentBill from "./component/paymentBill/paymentBill";
+import Payment from "./component/payment/payment";
+import DataProvider from "./paymentProvider/index";
 
 function App() {
   return (
@@ -11,8 +11,9 @@ function App() {
       <Header></Header>
       <div className="container">
         <Banner></Banner>
-        <PaymentMethod></PaymentMethod>
-        <PaymentBill></PaymentBill>
+        <DataProvider>
+          <Payment></Payment>
+        </DataProvider>
       </div>
     </div>
   );

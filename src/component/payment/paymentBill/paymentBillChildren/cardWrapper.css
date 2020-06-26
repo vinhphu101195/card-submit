@@ -1,0 +1,89 @@
+.payment-bill .card-wrapper {
+  width: 58%;
+  background: #fff;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+@media only screen and (max-width: 800px) {
+  .payment-bill .card-wrapper {
+    width: 100%;
+  }
+}
+
+.payment-bill .card-title h2 {
+  font-weight: 600;
+  font-size: 16px;
+  color: #1a1a1a;
+  padding: 0 20px;
+}
+
+.payment-bill .card .card-list ul {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 0 20px 20px;
+}
+
+.payment-bill .card .card-list ul li {
+  width: 30%;
+  padding: 0 4px;
+  margin-top: 12px;
+  list-style: none;
+  cursor: pointer;
+}
+
+.payment-bill .card .card-list ul li .box {
+  background: #fff;
+  text-align: center;
+  border: 1px solid #e7eaec;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  overflow: hidden;
+}
+/* ****** */
+/* active */
+/* ****** */
+.payment-bill .card .card-list ul li.active .box {
+  border: 1px solid #f16d25;
+}
+
+.payment-bill .card .card-list ul li .box .num1 {
+  background: #f6f7f8;
+  height: 25px;
+  line-height: 20px;
+  padding-top: 4px;
+  color: #142b43;
+  font-weight: 700;
+  margin: 0;
+}
+/* ****** */
+/* active */
+/* ****** */
+.payment-bill .card .card-list ul li.active .box .num1 {
+  background: #f16d25;
+  color: #fff;
+}
+
+.payment-bill .card .card-list ul li .box .num2 {
+  line-height: 18px;
+  padding: 8px 0 7px;
+  color: #8995a1;
+  font-size: 13px;
+  margin: 0;
+  font-size: 18px;
+}
+.payment-bill .card .card-list ul li.active .box .num2 {
+  color: #f16d25;
+}
+
+/* *********** */
+/* wallet-info */
+/* *********** */
+.payment-bill .wallet-info {
+  padding: 0 20px 20px;
+}
+.strong {
+  font-weight: 700;
+}
