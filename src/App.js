@@ -3,7 +3,7 @@ import "./App.css";
 import Header from "./component/navbar/navbar";
 import Banner from "./component/banner/banner";
 import Payment from "./component/payment/payment";
-import DataProvider from "./paymentProvider/index";
+import PaymentDataProvider from "./paymentProvider/index";
 
 function App() {
   return (
@@ -11,9 +11,9 @@ function App() {
       <Header></Header>
       <div className="container">
         <Banner></Banner>
-        <DataProvider>
+        <PaymentDataProvider>
           <Payment></Payment>
-        </DataProvider>
+        </PaymentDataProvider>
       </div>
     </div>
   );

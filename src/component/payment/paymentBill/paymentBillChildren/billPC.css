@@ -61,10 +61,7 @@
 .payform .payform-form .btn-row {
   margin-top: 20px;
 }
-.payform .payform-form .btn-row a.disabled {
-  opacity: 0.5;
-  pointer-events: none;
-}
+
 .payform .payform-form .btn-row button {
   background-image: -webkit-gradient(
     linear,
@@ -85,6 +82,10 @@
   margin: 0 auto;
   border-radius: 4px;
   border: 0;
+}
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
 }
 
 .show-error {

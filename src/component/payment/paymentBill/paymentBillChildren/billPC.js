@@ -2,8 +2,11 @@ import React from "react";
 import "./billPC.css";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { usePaymentData } from "../../../../paymentProvider/index";
 
 const BillPC = (props) => {
+  const { submitData } = usePaymentData();
+
   const selectActive = props.state
     ? props.state
     : {
@@ -14,8 +17,12 @@ const BillPC = (props) => {
     seri: "",
     pin: "",
   };
-  const onSubmit = (values) => {
+  const onSubmit = (values, { resetForm }) => {
+    console.log(submitData);
     console.log(values);
+    resetForm({ values: "" });
+    const submitObject = { ...submitData, ...values };
+    console.log(JSON.stringify(submitObject, null, 4));
   };
 
   const validationSchema = Yup.object({
@@ -41,7 +48,6 @@ const BillPC = (props) => {
               <h1>{selectActive.amount}đ</h1>
               <p>Nạp {selectActive.diamon} Kim Cương</p>
             </div>
-            {/* <div className="line"></div> */}
             <div className="input">
               <div>Số seri:</div>
               <div>
@@ -49,7 +55,7 @@ const BillPC = (props) => {
                   type="text"
                   name="seri"
                   onChange={formik.handleChange}
-                  value={formik.values.seri}
+                  value={formik.values.seri || ""}
                 />
                 {formik.errors.seri ? (
                   <div className="show-error">{formik.errors.seri}</div>
@@ -63,7 +69,7 @@ const BillPC = (props) => {
                   type="text"
                   name="pin"
                   onChange={formik.handleChange}
-                  value={formik.values.pin}
+                  value={formik.values.pin || ""}
                 />
                 {formik.errors.pin ? (
                   <div className="show-error">{formik.errors.pin}</div>
@@ -71,7 +77,12 @@ const BillPC = (props) => {
               </div>
             </div>
             <div className="btn-row">
-              <button type="submit">Thanh toán</button>
+              <button
+                type="submit"
+                className={submitData.item_id === "" ? "disabled" : ""}
+              >
+                Thanh toán
+              </button>
             </div>
           </div>
         </div>

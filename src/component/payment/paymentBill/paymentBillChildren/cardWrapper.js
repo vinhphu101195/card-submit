@@ -1,7 +1,10 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import "./cardWrapper.css";
+import { usePaymentData } from "../../../../paymentProvider/index";
 
 const CardWrapper = (props) => {
+  const { submitData, setSubmitData } = usePaymentData();
+
   const {
     selectActive: [selectActive, setSelectActive],
   } = {
@@ -10,36 +13,38 @@ const CardWrapper = (props) => {
   };
 
   const showCards = (cards) => {
-    if (cards.length > 0) {
-      return cards.map((card, index) => {
-        return (
-          <li
-            className={selectActive.amount === card.amount ? "active" : ""}
-            key={index}
-            onClick={() => {
-              setSelectActive(card);
-            }}
-            value="item_id"
-          >
-            <div className="box">
-              <div className="num1">{card.amount} đ</div>
-              <div className="num2">
-                <div className="diamond">
-                  <span>{card.diamon}</span>
-                  <img
-                    alt=""
-                    className="diamond"
-                    src="https://alive-static.sgp1.digitaloceanspaces.com/sites/payment/images/payment/diamond.png"
-                  />
-                </div>
-              </div>
-            </div>
-          </li>
-        );
-      });
-    } else {
+    if (cards.length <= 0) {
       return null;
     }
+    return cards.map((card, index) => {
+      return (
+        <li
+          className={selectActive.item_id === card.item_id ? "active" : ""}
+          key={index}
+          onClick={() => {
+            setSelectActive(card);
+            setSubmitData({
+              method_id: submitData.method_id,
+              item_id: card.item_id,
+            });
+          }}
+        >
+          <div className="box">
+            <div className="num1">{card.amount} đ</div>
+            <div className="num2">
+              <div className="diamond">
+                <span>{card.diamon}</span>
+                <img
+                  alt=""
+                  className="diamond"
+                  src="https://alive-static.sgp1.digitaloceanspaces.com/sites/payment/images/payment/diamond.png"
+                />
+              </div>
+            </div>
+          </div>
+        </li>
+      );
+    });
   };
 
   return (
