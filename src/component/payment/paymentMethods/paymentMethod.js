@@ -3,7 +3,7 @@ import "./paymentMethod.css";
 import { usePaymentData } from "../../../paymentProvider/index";
 
 const PaymentMethod = (props) => {
-  const { submitData, setSubmitData } = usePaymentData();
+  const { paymentData, submitData, setSubmitData } = usePaymentData();
   const [selectActive, setSelectActive] = useState(
     props.paymentMethodsObject[0]
   );
@@ -29,7 +29,7 @@ const PaymentMethod = (props) => {
           }}
         >
           <div>
-            <img alt="name" src={method.img} />
+            <img alt="name" src={method.image} />
             <span>{method.name}</span>
           </div>
           {/* <label className="label">KM</label> */}
@@ -43,7 +43,7 @@ const PaymentMethod = (props) => {
       {" "}
       <div className="payment-methods">
         <h6>Phương thức thanh toán</h6>
-        <ul>{showPaymentMethod(props.paymentMethodsObject)} </ul>
+        <ul>{showPaymentMethod(paymentData)} </ul>
       </div>
     </div>
   );

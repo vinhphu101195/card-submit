@@ -12,3 +12,127 @@ ul {
   padding: 0;
 }
 
+/* admin page */
+.page-container {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  padding-left: 280px;
+  -webkit-transition: padding-left 0.3s ease 0s;
+  transition: padding-left 0.3s ease 0s;
+  font-size: 14px;
+}
+
+.sidebar-menu {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 99;
+  height: 100vh;
+  width: 280px;
+  overflow: hidden;
+  background: #303641;
+  box-shadow: 2px 0 32px rgba(0, 0, 0, 0.05);
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.sidebar-header {
+  padding: 19px 32px 20px;
+  background: #303641;
+  border-bottom: 1px solid #343e50;
+}
+
+.sidebar-menu .logo {
+  text-align: center;
+}
+.logo a {
+  display: inline-block;
+  max-width: 120px;
+}
+.logo a img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  border-style: none;
+}
+
+.main-menu {
+  height: calc(100% - 100px);
+  overflow: hidden;
+  padding: 20px 10px 0 0;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.slimScrollDiv {
+  position: relative;
+  overflow: hidden;
+  width: auto;
+  height: 517px;
+}
+
+.menu-inner {
+  overflow: hidden;
+  height: 100%;
+  width: auto;
+}
+.menu-inner ul {
+  margin: 0;
+  list-style-type: none;
+}
+.menu-inner li:hover {
+  cursor: pointer;
+}
+.metismenu li span {
+  position: relative;
+  display: block;
+  font-size: 20px;
+  text-transform: capitalize;
+  padding: 15px 15px;
+  letter-spacing: 0;
+  font-weight: 400;
+  padding-left: 32px !important;
+  color: #fff;
+}
+
+.metismenu li span:hover {
+  color: #8d97ad;
+}
+.admin-main-content {
+  width: 100%;
+  background: #f3f8fb;
+}
+.page-title-area {
+  padding: 0 30px;
+  background: #fff;
+  position: relative;
+}
+.page-title-area:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 4px;
+  height: 36px;
+  background: var(--primary-color);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.align-items-center {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  -webkit-box-align: center !important;
+  -ms-flex-align: center !important;
+  align-items: center !important;
+}
+.admin-page-title {
+  font-size: 24px;
+  font-weight: 300;
+  color: #313b3d;
+  letter-spacing: 0;
+  margin-right: 30px;
+}
