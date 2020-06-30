@@ -54,5 +54,8 @@ header {
     text-decoration: none;
     margin-right: 10px;
 }
+.logout-btn:hover{
+    background-color: darkgray;
+}
 /* 
 end nav bar */
