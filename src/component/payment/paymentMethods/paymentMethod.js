@@ -23,8 +23,9 @@ const PaymentMethod = (props) => {
             setSelectActive(method);
             setSubmitData({
               item_id: submitData.item_id,
-              //   ...submitData.item_id,
               method_id: method.method_id,
+              method_name: method.name,
+              method_order: method.order,
             });
           }}
         >

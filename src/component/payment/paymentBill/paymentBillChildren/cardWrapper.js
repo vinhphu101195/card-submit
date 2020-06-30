@@ -3,7 +3,7 @@ import "./cardWrapper.css";
 import { usePaymentData } from "../../../../paymentProvider/index";
 
 const CardWrapper = (props) => {
-  const { submitData, setSubmitData } = usePaymentData();
+  const { paymentItemData, submitData, setSubmitData } = usePaymentData();
 
   const {
     selectActive: [selectActive, setSelectActive],
@@ -26,6 +26,8 @@ const CardWrapper = (props) => {
             setSubmitData({
               method_id: submitData.method_id,
               item_id: card.item_id,
+              method_name: submitData.method_name,
+              method_order: submitData.method_order,
             });
           }}
         >
@@ -33,7 +35,15 @@ const CardWrapper = (props) => {
             <div className="num1">{card.amount} đ</div>
             <div className="num2">
               <div className="diamond">
-                <span>{card.diamon}</span>
+                {card.diamond_bonus !== 0 ? (
+                  <span>
+                    {card.diamond} + {card.diamond_bonus}
+                  </span>
+                ) : (
+                  <span>{card.diamond}</span>
+                )}
+
+                {/* <span> + {card.diamond_bonus}</span> */}
                 <img
                   alt=""
                   className="diamond"
@@ -54,7 +64,7 @@ const CardWrapper = (props) => {
           <h2>Chọn mệnh giá</h2>
         </div>
         <div className="card-list">
-          <ul>{showCards(props.paymentCards)}</ul>
+          <ul>{showCards(paymentItemData)}</ul>
         </div>
       </div>
       <div className="wallet-info">

@@ -14,19 +14,17 @@ const BillPC = (props) => {
         diamon: "0",
       };
   const initialValues = {
-    seri: "",
+    serie: "",
     pin: "",
   };
   const onSubmit = (values, { resetForm }) => {
-    console.log(submitData);
-    console.log(values);
     resetForm({ values: "" });
     const submitObject = { ...submitData, ...values };
     console.log(JSON.stringify(submitObject, null, 4));
   };
 
   const validationSchema = Yup.object({
-    seri: Yup.string()
+    serie: Yup.string()
       .min(11, "seri must be at least 11 number")
       .required("seri is required"),
     pin: Yup.string().required("pin is required"),
@@ -53,12 +51,12 @@ const BillPC = (props) => {
               <div>
                 <input
                   type="text"
-                  name="seri"
+                  name="serie"
                   onChange={formik.handleChange}
-                  value={formik.values.seri || ""}
+                  value={formik.values.serie || ""}
                 />
-                {formik.errors.seri ? (
-                  <div className="show-error">{formik.errors.seri}</div>
+                {formik.errors.serie ? (
+                  <div className="show-error">{formik.errors.serie}</div>
                 ) : null}
               </div>
             </div>
