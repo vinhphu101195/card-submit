@@ -13,49 +13,29 @@ const PaymentDataProvider = (props) => {
     item_id: "",
   });
 
-  const fetchItemData = (methodID) => {
-    axios
-      .get(`http://localhost:8000/payment-item/${methodID}`)
-      .then((result) => {
-        if (result.data.error !== 0) {
-          setPaymentItemData([]);
-        } else {
-          setPaymentItemData(result.data.data);
-        }
-      });
-  };
-
   useEffect(() => {
     const fetchMethodData = () => {
-      axios.get(`http://localhost:8000/payment-method`).then((result) => {
+      axios.get(`http://localhost:8000/`).then((result) => {
         if (result.data.error !== 0) {
           setPaymentData([]);
         } else {
           setPaymentData(result.data.data);
-          setSubmitData({
-            method_id: result.data.data[0].method_id,
-            method_name: result.data.data[0].name,
-            order: result.data.data[0].order,
-            item_id: "",
-          });
-          fetchItemData(result.data.data[0].method_id);
         }
       });
     };
     fetchMethodData();
   }, []);
-
-  useEffect(() => {
-    if (submitData.method_id !== "") {
-      fetchItemData(submitData.method_id);
-    }
-  }, [submitData.method_id]);
-
-  console.log(paymentItemData);
+  console.log(submitData);
 
   return (
     <paymentDataContext.Provider
-      value={{ paymentData, paymentItemData, submitData, setSubmitData }}
+      value={{
+        paymentData,
+        paymentItemData,
+        setPaymentItemData,
+        submitData,
+        setSubmitData,
+      }}
     >
       {props.children}
     </paymentDataContext.Provider>

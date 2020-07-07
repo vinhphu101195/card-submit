@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import "./paymentMethod.css";
 import { usePaymentData } from "../../../paymentProvider/index";
 
-const PaymentMethod = (props) => {
-  const { paymentData, submitData, setSubmitData } = usePaymentData();
-  const [selectActive, setSelectActive] = useState(
-    props.paymentMethodsObject[0]
-  );
-
+const PaymentMethod = () => {
+  const {
+    paymentData,
+    submitData,
+    setSubmitData,
+    setPaymentItemData,
+  } = usePaymentData();
+  const [selectActive, setSelectActive] = useState({ name: "" });
   const showPaymentMethod = (methods) => {
     if (methods.length <= 0) {
       return null;
@@ -16,7 +18,7 @@ const PaymentMethod = (props) => {
       return (
         <li
           className={
-            selectActive.name === method.name ? "method active" : "method"
+            selectActive.order === method.order ? "method active" : "method"
           }
           key={index}
           onClick={() => {
@@ -27,10 +29,11 @@ const PaymentMethod = (props) => {
               method_name: method.name,
               method_order: method.order,
             });
+            setPaymentItemData(method.PaymentItems);
           }}
         >
           <div>
-            <img alt="name" src={method.image} />
+            <img alt="name" src={method.img_url} />
             <span>{method.name}</span>
           </div>
           {/* <label className="label">KM</label> */}
