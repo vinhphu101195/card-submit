@@ -3,12 +3,7 @@ import "./paymentMethod.css";
 import { usePaymentData } from "../../../paymentProvider/index";
 
 const PaymentMethod = () => {
-  const {
-    paymentData,
-    submitData,
-    setSubmitData,
-    setPaymentItemData,
-  } = usePaymentData();
+  const { paymentData, setSubmitData, setPaymentItemData } = usePaymentData();
   const [selectActive, setSelectActive] = useState({ name: "" });
   const showPaymentMethod = (methods) => {
     if (methods.length <= 0) {
