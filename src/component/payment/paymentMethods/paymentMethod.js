@@ -24,7 +24,7 @@ const PaymentMethod = () => {
           onClick={() => {
             setSelectActive(method);
             setSubmitData({
-              item_id: submitData.item_id,
+              item_id: "",
               method_id: method.method_id,
               method_name: method.name,
               method_order: method.order,

@@ -25,7 +25,6 @@ const PaymentDataProvider = (props) => {
     };
     fetchMethodData();
   }, []);
-  console.log(submitData);
 
   return (
     <paymentDataContext.Provider

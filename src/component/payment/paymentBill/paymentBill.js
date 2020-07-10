@@ -5,6 +5,7 @@ import BillPC from "./paymentBillChildren/billPC";
 
 const PaymentBill = (props) => {
   const [selectActive, setSelectActive] = useState("");
+  console.log(selectActive);
 
   return (
     <div className="payment-bill">
