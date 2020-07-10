@@ -1,6 +1,5 @@
 import React from "react";
 import "./billPC.css";
-import { useFormik } from "formik";
 import { usePaymentData } from "../../../../paymentProvider/index";
 import axios from "axios";
 
@@ -32,12 +31,7 @@ const BillPC = (props) => {
       });
   };
 
-  const formik2 = useFormik({
-    onSubmit,
-  });
-
   return (
-    // <form className="bill-pc" onSubmit={formik2.handleSubmit}>
     <form className="bill-pc" onSubmit={onSubmit}>
       <div className="bill-wrapper">
         <div className="payform">
