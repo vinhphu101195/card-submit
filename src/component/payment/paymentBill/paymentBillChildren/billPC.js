@@ -31,9 +31,8 @@ const BillPC = (props) => {
         if (res.data.data.payURL) {
           window.location.assign(res.data.data.payURL);
         } else {
-          alert(res.data.data.message);
+          console.log(res.data.data);
         }
-        console.log(res.data.data);
       });
   };
 
@@ -60,34 +59,32 @@ const BillPC = (props) => {
               <h1>{selectActive.amount}đ</h1>
               <p>Nạp {selectActive.diamon} Kim Cương</p>
             </div>
-            <div className="input-field">
-              <div className="input">
-                <div>Số seri:</div>
-                <div>
-                  <input
-                    type="text"
-                    name="serie"
-                    onChange={formik.handleChange}
-                    value={formik.values.serie || ""}
-                  />
-                  {formik.errors.serie ? (
-                    <div className="show-error">{formik.errors.serie}</div>
-                  ) : null}
-                </div>
+            <div className="input">
+              <div>Số seri:</div>
+              <div>
+                <input
+                  type="text"
+                  name="serie"
+                  onChange={formik.handleChange}
+                  value={formik.values.serie || ""}
+                />
+                {formik.errors.serie ? (
+                  <div className="show-error">{formik.errors.serie}</div>
+                ) : null}
               </div>
-              <div className="input">
-                <div>Số thẻ:</div>
-                <div>
-                  <input
-                    type="text"
-                    name="pin"
-                    onChange={formik.handleChange}
-                    value={formik.values.pin || ""}
-                  />
-                  {formik.errors.pin ? (
-                    <div className="show-error">{formik.errors.pin}</div>
-                  ) : null}
-                </div>
+            </div>
+            <div className="input">
+              <div>Số thẻ:</div>
+              <div>
+                <input
+                  type="text"
+                  name="pin"
+                  onChange={formik.handleChange}
+                  value={formik.values.pin || ""}
+                />
+                {formik.errors.pin ? (
+                  <div className="show-error">{formik.errors.pin}</div>
+                ) : null}
               </div>
             </div>
             <div className="btn-row">
