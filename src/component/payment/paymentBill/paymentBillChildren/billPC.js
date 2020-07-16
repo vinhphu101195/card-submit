@@ -37,9 +37,7 @@ const BillPC = (props) => {
   };
 
   const validationSchema = Yup.object({
-    serie: Yup.string()
-      .min(11, "seri must be at least 11 number")
-      .required("seri is required"),
+    serie: Yup.string().required("seri is required"),
     pin: Yup.string().required("pin is required"),
   });
 
